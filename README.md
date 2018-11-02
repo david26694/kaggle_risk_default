@@ -11,3 +11,4 @@ Structure:
 Code:
  - 01_explore.R does a general exploration of the tables.
  - 02_bureau_balance_features.R does aggregations of the data of the balance of every bureau to have bureau-level features.
+ - 03_bureau_features.R does aggregations of the data at bureau level to obtain loan-level features.
