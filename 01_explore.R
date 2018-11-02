@@ -8,9 +8,6 @@ columns_description <- read.csv2('data/HomeCredit_columns_description.csv', sep 
 
 columns_description %>% View
 
-
-
-
 # Let’s see the application train data --------------------------------------------------------
 
 application_train <- read.csv2('data/application_train.csv', sep = ',')
@@ -36,10 +33,7 @@ application_train %>%
 
 application_train %>% summary
 
-
-
 # What about the bureaus ----------------------------------------------------------------------
-
 
 bureau <- read.csv2('data/bureau.csv', sep = ',')
 
@@ -70,7 +64,14 @@ bureau %>%
 
 bureau_balance <- read.csv2('data/bureau_balance.csv', sep = ',')
 
-bureau_balance %>% head
+bureau_balance %>% count(STATUS)
+# Most of them 0, C or X: (C means closed, X unknown), 0 means no DPD
+# 1, 2, 3, 4 months DPD and 5 DPD+120 or sold or written of.
+
+
+
+
+
 
 # Previous application ------------------------------------------------------------------------
 
@@ -79,7 +80,7 @@ previous_application <- read.csv2('data/previous_application.csv', sep = ',')
 previous_application %>% head
 
 application_train %>% filter(SK_ID_CURR == 2030495)
-# Not every application on the training set
+# Not every application is on the training set
 
 
 
