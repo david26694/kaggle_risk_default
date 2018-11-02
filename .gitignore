@@ -6,7 +6,7 @@
 .RData
 
 # Data
-.csv
+*.csv
 
 # Mac crap
 .DS_Store
