@@ -17,5 +17,15 @@ bureau_features$has_balance <- 0
 bureau_features[!is.na(bureau_features$has_number), 'has_balance'] <- 1 
 
 
+bureau %>% head
 
-bureau_features %>% filter(has_balance == 1) %>% head
+# Create credit active related features
+bureau %>% count(CREDIT_ACTIVE)
+bureau_credit_active_count <- bureau %>% 
+  group_by(SK_ID_CURR) %>% 
+  summarise(
+    count_active = sum(CREDIT_ACTIVE == 'Active'),
+    count_closed = sum(CREDIT_ACTIVE == 'Closed'),
+    count_sold = sum(CREDIT_ACTIVE == 'Sold'),
+    num_bureaus = n()
+  )
