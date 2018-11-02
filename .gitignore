@@ -5,6 +5,12 @@
 # Session Data files
 .RData
 
+# Data
+.csv
+
+# Mac crap
+.DS_Store
+
 # Example code in package build process
 *-Ex.R
 
@@ -34,3 +40,4 @@ vignettes/*.pdf
 
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
+.Rproj.user
